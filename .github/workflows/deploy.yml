@@ -10,24 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 12
-      - run: yarn workspace api build
 
-      # TODO: Configure publish step
-      # - run: yarn workspace api publish
+      - name: build api        
+        run: yarn workspace api build
+      
+      - name: build app
+        run: yarn workspace app build
 
-      - run: yarn workspace app build
-
-      # TODO: Add Workers Sites to app workspace
-      # - run: yarn workspace app publish
-
-      # - name: Publish
-      #   uses: cloudflare/wrangler-action@1.2.0
-      #   with:
-      #     apiToken: ${{ secrets.CF_API_TOKEN }}
-      #     workingDirectory: api
-      #   env:
-      #     CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+      - name: Publish        
+        uses: cloudflare/wrangler-action@v3.12.1                        
+        with:          
+          workingDirectory: api
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CF_API_TOKEN }}        
