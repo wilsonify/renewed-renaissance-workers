@@ -1,27 +1,40 @@
-This is the source code for an e-commerce bundle platform built on Workers, providing AppSumo/Woot-style deals on software/educational content.
+renewed-renaissance-workers
+============
 
-Documentation is still in-progress, but here's a list of the important directories to check out:
+This is the source code for an e-commerce bundle platform built on Cloudflare Workers,
 
-- `api`: [Cloudflare Workers](https://workers.dev) application that serves static HTML, CSS, and JS, as well as acts as a serverless API and webhook handler for Stripe.
-- `app`: [Nuxt.js](https://nuxtjs.org) static application that renders data from Sanity.io as HTML/JS components.
-- `lambda`: A Lambda function managed by Serverless framework that writes information to a Google Sheet via an API request.
-- `sanity`: The dataset and configuration for the Sanity.io headless CMS deploy that powers this application.
+providing Woot-style deals on content.
 
-This codebase isn't thoroughly documented yet, though eventually it will be possible to take it and deploy on your own in order to build an e-commerce store using Cloudflare Workers.
+## important directories:
+
+- `api`: [Cloudflare Workers](https://workers.dev) 
+ 
+    application that serves static HTML, CSS, and JS, as well as acts as a serverless API and webhook handler for Stripe.
+
+- `app`: [Nuxt.js](https://nuxtjs.org) 
+ 
+    static application that renders data from Sanity.io as HTML/JS components.
+
+- `lambda`: 
+   
+    A Lambda function managed by Serverless framework that writes information to a Google Sheet via an API request.
+
+- `sanity`:
+
+    The dataset and configuration for the Sanity.io headless CMS deploy that powers this application.
+
 
 ## Configuration
-
-You should fork this repo onto your personal GitHub account. Once you've done that, comment out the lines found at the bottom of [.gitignore](https://github.com/signalnerve/ecommerce-bundles-workers-example/blob/main/.gitignore).
 
 A number of example configuration files have been set up across the codebase. These can be copied (and `.example` removed) to prepare the project for deployment:
 
 - `cp config.example.js config.js`
 - `cp api/wrangler.example.toml api/wrangler.toml`
 - `cp sanity/sanity.example.json api/sanity.json`
+- `cp api/sanity.json app/sanity.json`
 
-In addition, `sanity/sanity.json` should be duplicated to `app/sanity.json` so the Nuxt.js frontend can properly talk to your Sanity CMS deployment:
+note, `sanity/sanity.json` should be duplicated to `app/sanity.json` so the Nuxt.js frontend can properly talk to your Sanity CMS deployment:
 
-- `cp sanity/sanity.json app/sanity.json`
 
 ### config.js
 
