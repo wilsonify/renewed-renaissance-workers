@@ -1,12 +1,12 @@
 export default {
   // The public-facing name of your store.
-  title: 'MYSTORE',
+  title: 'Renewed Renaissance',
 
   // Short (1-2) sentence description of your store
-  description: "Exclusive, timed deals on our favorite stuff.",
+  description: "Renewed Renaissance is an online store celebrating creativity and sustainability by offering unique art pieces crafted from recycled materials. Each product transforms waste into beauty, inspiring a greener future.",
 
   // A contact email used to contact the site admin (used in InfoPanel.vue)
-  email: "your@email.com",
+  email: "admin@renewed-renaissance.com",
 
   // A publicly-accessible image used in OpenGraph tags when rendering your site
   // on Twitter, Facebook, and other social media tools

@@ -33,8 +33,8 @@ A number of example configuration files have been set up across the codebase. Th
 - `cp sanity/sanity.example.json api/sanity.json`
 - `cp api/sanity.json app/sanity.json`
 
-note, `sanity/sanity.json` should be duplicated to `app/sanity.json` so the Nuxt.js frontend can properly talk to your Sanity CMS deployment:
-
+note, `api/sanity.json` should be duplicated to 
+`app/sanity.json` so the Nuxt.js frontend can properly talk to your Sanity CMS deployment:
 
 ### config.js
 
@@ -46,19 +46,19 @@ A number of [wrangler secrets](https://developers.cloudflare.com/workers/cli-wra
 
 _This section is in progress - the list of secrets can be found below, and explanations on how/where to get these values is coming soon._
 
-| Name                          | What is it |
-| ----------------------------- | ---------- |
-| AUTH_TOKEN                    |            |
-| AWS_ACCESS_KEY                |            |
-| AWS_SECRET_KEY                |            |
-| LAMBDA_FN                     |            |
-| MAILGUN_API_KEY               |
-| MAILGUN_DOMAIN                |            |
-| SALT                          |            |
-| SANITY_DATASET                |            |
-| SANITY_PROJECT_ID             |            |
-| STRIPE_SECRET_KEY             |            |
-| STRIPE_WEBHOOK_SIGNING_SECRET |            |
+| Name                          | What is it                             |
+| ----------------------------- |----------------------------------------|
+| AUTH_TOKEN                    | Service Account for writeToGoogleSheet |
+| AWS_ACCESS_KEY                | aws credentials                        |
+| AWS_SECRET_KEY                | aws credentials                        |
+| LAMBDA_FN                     | name of aws lambda function            |
+| MAILGUN_API_KEY               |                                        |
+| MAILGUN_DOMAIN                |                                        |
+| SALT                          | salted hash for putEncryptedKV         |
+| SANITY_DATASET                |                                        |
+| SANITY_PROJECT_ID             |                                        |
+| STRIPE_SECRET_KEY             |                                        |
+| STRIPE_WEBHOOK_SIGNING_SECRET |                                        |
 
 ## Example
 
