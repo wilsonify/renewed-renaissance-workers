@@ -1,44 +1,30 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "baseUrl": ".",
-    "checkJs": false,
-    "declaration": false,
-    "emitDecoratorMetadata": true,
+    "target": "ES2021",
     "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
-    "inlineSourceMap": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "Node16",
     "moduleResolution": "Node16",
-    "noEmit": true,
-    "outDir": "./.medusa/server",
-    "paths": {      "#src/*": ["./src/*"]    },
-    "plugins": [      {        "name": "next"      }    ],
-    "resolveJsonModule": true,
-    "rootDir": "./",
-    "skipDefaultLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "declaration": false,
     "sourceMap": false,
-    "strict": true,
-    "target": "ES2021",
-    "types": [        "@cloudflare/workers-types/2023-07-01"    ]
-
+    "inlineSourceMap": true,
+    "outDir": "./.medusa/server",
+    "rootDir": "./",
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "checkJs": false
   },
   "ts-node": {
     "swc": true
   },
   "include": [
     "**/*",
-    "**/*.ts",
-    "**/*.tsx",
-    ".medusa/types/*",
-    ".next/types/**/*.ts",
-    "next-env.d.ts"
+    ".medusa/types/*"
   ],
   "exclude": [
     "node_modules",
