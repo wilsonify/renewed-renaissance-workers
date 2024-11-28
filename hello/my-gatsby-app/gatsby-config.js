@@ -9,15 +9,15 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Renewed Renaissance Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Tom Wilson`,
+      summary: `who lives in Pennsylvania`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `A blog`,
+    siteUrl: `https://my-gatsby-app.tom-andrew-wilson.workers.dev/`,
     social: {
-      twitter: `kylemathews`,
+      reddit: `slaphappyhubris`,
     },
   },
   plugins: [
