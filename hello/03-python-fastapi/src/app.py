@@ -5,27 +5,11 @@ from fastapi import Request
 
 from Item import Item
 from routes.env import env_inner
-from routes.items import create_item_inner, update_item_inner, read_item_inner, CREATE_ITEM_SUCCESS_RESPONSE
+from routes.items import create_item_inner, update_item_inner, read_item_inner, CREATE_ITEM_SUCCESS_RESPONSE, \
+    ERROR_RESPONSES
 from routes.root import root_inner
 
 app = FastAPI(title="Items API", description="API for managing items", version="1.0.0")
-
-# Example responses
-
-ERROR_RESPONSES = {
-    400: {
-        "description": "Bad Request",
-        "content": {
-            "application/json": {"example": {"detail": "Invalid input"}}
-        },
-    },
-    500: {
-        "description": "Internal Server Error",
-        "content": {
-            "application/json": {"example": {"detail": "Unexpected error"}}
-        },
-    },
-}
 
 
 @app.post(
@@ -66,7 +50,8 @@ async def update_item(item_id: str, item: Dict[str, Any]) -> Dict[str, Any]:
         Dict[str, Any]: The updated item details.
     """
     try:
-        updated_item = await update_item_inner(item_id, item)
+        item_item = Item(**item)
+        updated_item = await update_item_inner(item_id, item_item)
         return updated_item
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
