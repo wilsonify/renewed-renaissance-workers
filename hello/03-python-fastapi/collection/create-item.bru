@@ -1,0 +1,25 @@
+meta {
+  name: create-item
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8787/items/
+  body: json
+  auth: none
+}
+
+headers {
+    "accept": "application/json",
+    "Content-Type": "application/json"
+}
+
+body:json {
+  {
+      "name": "item01-name",
+      "price": 32.00,
+      "description": "This is the first item",
+      "tax": 2.00
+  }
+}
