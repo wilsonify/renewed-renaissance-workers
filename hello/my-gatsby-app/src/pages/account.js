@@ -1,9 +1,7 @@
 // src/pages/account.js
 import React from "react";
-/* 👇 New code 👇 */
 import { Link } from "gatsby";
 import { useAuth0 } from "@auth0/auth0-react";
-/* 👇 Import the withAuthenticationRequired HOC 👇 */
 import { withAuthenticationRequired } from '@auth0/auth0-react';
 import LogoutButton from "../components/LogoutButton";
 
@@ -14,14 +12,14 @@ const Account = () => {
    <nav>
     <Link to="/">Home</Link>
     <p>Email: {user.email}</p>
-    {/* 👇 New Code */}
     <LogoutButton />
   </nav>
  </>
  );
 };
 
-
-
-/* 👇 Wrap the component in the withAuthenticationRequired handler 👇 */
+/*
+unauthorized users will be redirected to the login page
+authorized users will see their /account details
+*/
 export default withAuthenticationRequired(Account);
