@@ -1,7 +1,6 @@
 /*
-
-Access the isAuthticated auth state
-and the logoutmethod from the useAuth0 hook.
+Access the isAuthenticated auth state
+and the logout method from the useAuth0 hook.
 The logout() method redirects your users to your
 Auth0 logout endpoint (https://YOUR_DOMAIN/v2/logout)
 and then immediately redirects them to your application.
